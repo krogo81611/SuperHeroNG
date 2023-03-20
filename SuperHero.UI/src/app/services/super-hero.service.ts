@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SuperHero } from '../models/super-hero';
 
@@ -6,7 +7,11 @@ import { SuperHero } from '../models/super-hero';
 })
 export class SuperHeroService {
 
-  constructor() { }
+  url = "SuperHero";
+  
+  constructor(private http: HttpClient) { }
+  
+  
 
   public getSuperHeroes() : SuperHero[] {
     let hero = new SuperHero();
